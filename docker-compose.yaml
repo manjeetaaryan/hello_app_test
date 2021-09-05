@@ -1,0 +1,15 @@
+version: '2.0'
+services:
+    app:
+        container_name: hello-app
+        restart: always
+        build: .
+        ports:
+            - '8080:8080'
+        #links:
+         #   - gcr.io/google-samples/hello-app:2.0
+    mongo:
+        container_name: hello-app
+        image: us-docker.pkg.dev/google-samples/containers/gke/hello-app:2.0
+        ports: 
+            - '8080:8080'
